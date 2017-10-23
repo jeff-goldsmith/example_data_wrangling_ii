@@ -41,6 +41,18 @@ table_marj = (drug_use_xml %>% html_nodes(css = "table"))[[1]] %>%
 
 Now I have exactly the table I want!!
 
+### NYC Cost of living table
+
+I'd like to understand the impact of my life choices by looking at cost of living in NYC compared to the rest of the US. The table below should help!
+
+```{r}
+url = "https://www.bestplaces.net/cost_of_living/city/new_york/new_york"
+
+nyc_cost_xml = read_html(url)
+
+nyc_cost_table = (nyc_cost_xml %>% html_nodes(css = "table"))[[2]] %>% 
+  html_table(header = TRUE)
+```
 
 
 

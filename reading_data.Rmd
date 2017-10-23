@@ -54,6 +54,20 @@ nyc_cost_table = (nyc_cost_xml %>% html_nodes(css = "table"))[[2]] %>%
   html_table(header = TRUE)
 ```
 
+### HP_SS Cast
+
+I want the names!!
+
+```{r}
+url = "http://www.imdb.com/title/tt0241527/"
+
+hpss_xml = read_html(url)
+
+hpss_cast = hpss_xml %>%
+  html_nodes(css = ".itemprop .itemprop") %>% 
+  html_text()
+```
+
 
 
 

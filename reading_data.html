@@ -167,6 +167,17 @@ nyc_cost_xml = read_html(url)
 nyc_cost_table = (nyc_cost_xml %&gt;% html_nodes(css = &quot;table&quot;))[[2]] %&gt;% 
   html_table(header = TRUE)</code></pre>
 </div>
+<div id="hp_ss-cast" class="section level3">
+<h3>HP_SS Cast</h3>
+<p>I want the names!!</p>
+<pre class="r"><code>url = &quot;http://www.imdb.com/title/tt0241527/&quot;
+
+hpss_xml = read_html(url)
+
+hpss_cast = hpss_xml %&gt;%
+  html_nodes(css = &quot;.itemprop .itemprop&quot;) %&gt;% 
+  html_text()</code></pre>
+</div>
 </div>
 <div id="apis" class="section level2">
 <h2>APIs</h2>

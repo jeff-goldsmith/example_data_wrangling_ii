@@ -1,0 +1,18 @@
+---
+title: "Strings and Factors"
+author: "Jeff Goldsmith"
+date: "10/25/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(janitor)
+library(haven)
+library(rvest)
+
+library(stringr)
+library(forcats)
+```
+
+## R Markdown

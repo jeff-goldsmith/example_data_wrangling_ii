@@ -180,7 +180,7 @@ hpss_cast = hpss_xml %&gt;%
 </div>
 <div id="toothbrush-reviews" class="section level3">
 <h3>Toothbrush reviews</h3>
-<p>Dental hygiene;;ksdf</p>
+<p>Dental <a href="https://www.google.com/search?&amp;rls=en&amp;q=hygiene&amp;ie=UTF-8&amp;oe=UTF-8">hygiene</a>.</p>
 <pre class="r"><code>url = &quot;https://www.amazon.com/Philips-Sonicare-rechargeable-toothbrush-HX6211/product-reviews/B00YAR7ZFM/ref=cm_cr_arp_d_viewopt_srt?ie=UTF8&amp;reviewerType=all_reviews&amp;sortBy=recent&amp;pageNumber=2&quot;
 
 toothbrush_xml = read_html(url)
@@ -201,6 +201,24 @@ toothbrush_df = data_frame(
 </div>
 <div id="apis" class="section level2">
 <h2>APIs</h2>
+<div id="water-use-data" class="section level3">
+<h3>Water use data</h3>
+<p>Getting water data via the API.</p>
+<pre class="r"><code>nyc_water = GET(&quot;https://data.cityofnewyork.us/resource/waf7-5gvc.csv&quot;) %&gt;%
+  content(&quot;parsed&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   new_york_city_population = col_integer(),
+##   nyc_consumption_million_gallons_per_day = col_integer(),
+##   per_capita_gallons_per_person_per_day = col_integer(),
+##   year = col_integer()
+## )</code></pre>
+<p>Getting the same data using JSON …</p>
+<pre class="r"><code>nyc_water = GET(&quot;https://data.cityofnewyork.us/resource/waf7-5gvc.json&quot;) %&gt;% 
+  content(&quot;text&quot;) %&gt;%
+  jsonlite::fromJSON() %&gt;%
+  as_tibble()</code></pre>
+</div>
 </div>
 
 
